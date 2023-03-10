@@ -23,8 +23,8 @@ KEEP.initUtils = () => {
 
     initData() {
       const { scroll, first_screen } = KEEP.theme_config.style
-      this.isHasScrollProgressBar = scroll.progress_bar.enable === true
-      this.isHasScrollPercent = scroll.percent.enable === true
+      this.isHasScrollProgressBar = scroll.progress_bar === true
+      this.isHasScrollPercent = scroll.percent === true
       const { enable, header_transparent } = first_screen
       this.isHeaderTransparent = enable === true && header_transparent === true
     },
@@ -91,8 +91,19 @@ KEEP.initUtils = () => {
 
     // toggle show tools list
     toggleShowToolsList() {
-      document.querySelector('.tool-toggle-show').addEventListener('click', () => {
-        document.querySelector('.side-tools-list').classList.toggle('show')
+      const sideToolsListDom = document.querySelector('.side-tools-list')
+      const toggleShowToolsDom = document.querySelector('.tool-toggle-show')
+      toggleShowToolsDom.addEventListener('click', (e) => {
+        sideToolsListDom.classList.toggle('show')
+        e.stopPropagation()
+      })
+      sideToolsListDom.querySelectorAll('.tools-item').forEach((item) => {
+        item.addEventListener('click', (e) => {
+          e.stopPropagation()
+        })
+      })
+      document.addEventListener('click', () => {
+        sideToolsListDom.classList.contains('show') && sideToolsListDom.classList.remove('show')
       })
     },
 
@@ -284,7 +295,7 @@ KEEP.initUtils = () => {
       post &&
         post.forEach((v) => {
           const nowDate = Date.now()
-          const postDate = new Date(v.dataset.date.split(' GMT')[0]).getTime()
+          const postDate = new Date(v.dataset.updated.split(' GMT')[0]).getTime()
           v.innerHTML = this.getHowLongAgo(Math.floor((nowDate - postDate) / 1000))
         })
     },
