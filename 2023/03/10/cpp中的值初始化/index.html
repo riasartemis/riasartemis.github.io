@@ -9,7 +9,7 @@
     
     <title>
         
-            归档: 2023/3 |
+            cpp中的值初始化 |
         
         karn&#39;s blog
     </title>
@@ -83,7 +83,7 @@
                         </li>
                     
                         <li class="menu-item">
-                            <a class="active"
+                            <a class=""
                                href="/archives"
                             >
                                 归档
@@ -119,7 +119,7 @@
                 </li>
             
                 <li class="drawer-menu-item flex-center">
-                    <a class="active"
+                    <a class=""
                        href="/archives">归档</a>
                 </li>
             
@@ -144,66 +144,154 @@
 
                 
                     <div class="fade-in-down-animation">
-    <div class="archive-container ">
-        
-<div class="archive-list-container">
-    
-        <section class="archive-item">
-            <div class="archive-item-header">
-                <span class="archive-year">2023</span>
-                <span class="archive-year-post-count">[6]</span>
+    <div class="post-page-container">
+        <div class="article-content-container">
+
+            <div class="article-title">
+                <span class="title-hover-animation">cpp中的值初始化</span>
             </div>
-            <ul class="article-list">
+
+            
+                <div class="article-header">
+                    <div class="avatar">
+                        <img src="/images/avatar.jpg">
+                    </div>
+                    <div class="info">
+                        <div class="author">
+                            <span class="name">riasartemis</span>
+                            
+                        </div>
+                        <div class="meta-info">
+                            
+<div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        
+            <i class="fa-regular fa-calendar-plus"></i>&nbsp;
+        
+        <span class="pc">2023-03-10 14:47:49</span>
+        <span class="mobile">2023-03-10 14:47</span>
+    </span>
+    
+        <span class="article-update-date article-meta-item">
+        <i class="fas fa-file-pen"></i>&nbsp;
+        <span class="pc">2023-03-10 14:47:49</span>
+    </span>
+    
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fas fa-tags"></i>&nbsp;
+            <ul>
                 
-                    <li class="article-item">
-                        <a class="article-title"
-                           href="/2023/03/10/cpp%E4%B8%AD%E7%9A%84%E5%80%BC%E5%88%9D%E5%A7%8B%E5%8C%96/"
-                        >cpp中的值初始化</a>
-                        <span class="article-date">03-10</span>
-                    </li>
-                
-                    <li class="article-item">
-                        <a class="article-title"
-                           href="/2023/03/10/cpp%E4%B8%AD%E7%9A%84%E7%9A%84%E9%BB%98%E8%AE%A4%E5%88%9D%E5%A7%8B%E5%8C%96/"
-                        >cpp中的的默认初始化</a>
-                        <span class="article-date">03-10</span>
-                    </li>
-                
-                    <li class="article-item">
-                        <a class="article-title"
-                           href="/2023/03/10/cpp%E4%B8%AD%E7%9A%84%E9%9D%99%E6%80%81%E6%88%90%E5%91%98/"
-                        >cpp中的静态成员</a>
-                        <span class="article-date">03-10</span>
-                    </li>
-                
-                    <li class="article-item">
-                        <a class="article-title"
-                           href="/2023/03/10/cpp%E4%B8%AD%E7%9A%84%E5%85%B1%E4%BA%AB%E6%8C%87%E9%92%88%E4%BB%A5%E5%8F%8A%E5%BE%AA%E7%8E%AF%E5%BC%95%E7%94%A8/"
-                        >cpp中的共享指针以及循环引用</a>
-                        <span class="article-date">03-10</span>
-                    </li>
-                
-                    <li class="article-item">
-                        <a class="article-title"
-                           href="/2023/03/10/IEEE754%E6%B5%AE%E7%82%B9%E6%95%B0%E8%A1%A8%E7%A4%BA%E6%B3%95/"
-                        >IEEE754浮点数表示法</a>
-                        <span class="article-date">03-10</span>
-                    </li>
-                
-                    <li class="article-item">
-                        <a class="article-title"
-                           href="/2023/03/10/cpp%E4%B8%AD%E7%9A%84%E5%80%BC%E7%B1%BB%E5%88%AB%E4%B8%8E%E6%A8%A1%E6%9D%BF%E6%8E%A8%E5%AF%BC/"
-                        >cpp中的值类别与模板推导</a>
-                        <span class="article-date">03-10</span>
+                    <li>
+                        <a href="/tags/cpp/">cpp</a>&nbsp;
                     </li>
                 
             </ul>
-        </section>
+        </span>
+    
+
+    
+    
+    
     
 </div>
 
+                        </div>
+                    </div>
+                </div>
+            
+
+            <div class="article-content keep-markdown-body">
+                
+
+                <h2 id="值初始化语法"><a href="#值初始化语法" class="headerlink" title="值初始化语法"></a>值初始化语法</h2><p>C++ 中的值初始化语法有以下几种形式</p>
+<ol>
+<li><p><code>T()</code></p>
+</li>
+<li><p><code>new T()</code></p>
+</li>
+<li><p><code>Class:Class(...):member()&#123;...&#125;</code></p>
+</li>
+<li><p><code>T object&#123;&#125;</code></p>
+</li>
+<li><p><code>T&#123;&#125;</code></p>
+</li>
+<li><p><code>new T&#123;&#125;</code></p>
+</li>
+<li><p><code>Class::Class(...):member&#123;&#125;&#123;...&#125;</code></p>
+</li>
+</ol>
+<p>其中第4，5，6，7几种语法是从 C++11 之后开始的语法。需要额外注意的是，第四种语法用于命名对象（自动，静态，线程本地）的声明，并且它的初始化器由一对花括号组成。</p>
+<p>在所有情况中，如果使用了空花括号对 { } 并且 T 是一个聚合类型，那么将会执行聚合初始化。</p>
+<h2 id="值初始化的效果（从C-11开始）"><a href="#值初始化的效果（从C-11开始）" class="headerlink" title="值初始化的效果（从C++11开始）"></a>值初始化的效果（<b>从C++11开始</b>）</h2><ol>
+<li><p>如果 T 是一个没有默认构造器的 Class 类型，或者是有一个用户提供的或者被删除的默认构造器的 Class 类型，那么将会执行默认初始化。</p>
+</li>
+<li><p>如果T是一个 Class 类型，并且它的默认构造器既不是用户提供的也不是被删除的（隐式定义的构造器或者被显示默认的默认构造器），那么就会对该对象执行零初始化（zero-initialized），但是如果 T 拥有 non-trivial 默认构造器，那么仍然会执行默认初始化</p>
+</li>
+<li><p>如果T是一个数组类型，那么每一个元素将会执行值初始化。</p>
+</li>
+<li><p>否则对象将会被零初始化（zero-initialized）。</p>
+</li>
+</ol>
+<p>上面的效果中，<a class="link"   target="_blank" rel="noopener" href="https://en.cppreference.com/w/cpp/language/function#User-provided_functions" >用户提供（user-provided）<i class="fas fa-external-link-alt"></i></a>的函数指的是一个函数在它的第一次声明时，是用户声明的且没有被显示的删除或者默认。</p>
+<p>##参考</p>
+<ul>
+<li><a class="link"   target="_blank" rel="noopener" href="https://en.cppreference.com/w/cpp/language/value_initialization" >Value initialization<i class="fas fa-external-link-alt"></i></a></li>
+</ul>
+
+            </div>
+
+            
+
+            
+                <ul class="post-tags-box">
+                    
+                        <li class="tag-item">
+                            <a href="/tags/cpp/">#cpp</a>&nbsp;
+                        </li>
+                    
+                </ul>
+            
+
+            
+                <div class="article-nav">
+                    
+                    
+                        <div class="article-next">
+                            <a class="next"
+                               rel="next"
+                               href="/2023/03/10/cpp%E4%B8%AD%E7%9A%84%E7%9A%84%E9%BB%98%E8%AE%A4%E5%88%9D%E5%A7%8B%E5%8C%96/"
+                            >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">cpp中的的默认初始化</span>
+                                <span class="post-nav-item">下一篇</span>
+                            </span>
+                                <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                            </a>
+                        </div>
+                    
+                </div>
+            
+
+            
+        </div>
+
+        
+            <div class="toc-content-container">
+                <div class="post-toc-wrap">
+    <div class="post-toc">
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%80%BC%E5%88%9D%E5%A7%8B%E5%8C%96%E8%AF%AD%E6%B3%95"><span class="nav-number">1.</span> <span class="nav-text">值初始化语法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%80%BC%E5%88%9D%E5%A7%8B%E5%8C%96%E7%9A%84%E6%95%88%E6%9E%9C%EF%BC%88%E4%BB%8EC-11%E5%BC%80%E5%A7%8B%EF%BC%89"><span class="nav-number">2.</span> <span class="nav-text">值初始化的效果（从C++11开始）</span></a></li></ol>
     </div>
 </div>
+
+            </div>
+        
+    </div>
+</div>
+
 
                 
             </div>
@@ -237,6 +325,23 @@
         </div>
     </div>
 
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item flex-center toggle-show-toc">
+                <i class="fas fa-list"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+    </ul>
+</div>
+
+        </div>
     
 
     <div class="right-bottom-side-tools">
@@ -314,6 +419,20 @@
 
 
 <div class="post-scripts">
+    
+        
+<script src="/js/post-helper.js"></script>
+
+        
+            
+<script src="/js/libs/anime.min.js"></script>
+
+        
+        
+            
+<script src="/js/toc.js"></script>
+
+        
     
 </div>
 
